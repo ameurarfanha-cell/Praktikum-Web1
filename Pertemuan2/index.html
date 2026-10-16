@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Absensi dan Form Mahasiswa</title>
+
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            margin: 30px;
+            color: black;
+        }
+
+        .kotak-absensi {
+            border: 1px solid black;
+            padding: 20px 55px 30px;
+            margin-bottom: 35px;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        table {
+            width: 100%;
+            border: 2px solid #999;
+            border-spacing: 2px;
+            text-align: center;
+        }
+
+        th, td {
+            border: 1px solid #999;
+            padding: 2px;
+        }
+
+        .nama {
+            text-align: left;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        fieldset {
+            margin-bottom: 5px;
+            border: 2px solid #aaa;
+            padding: 10px 15px;
+        }
+
+        legend {
+            font-size: 16px;
+        }
+
+        .baris {
+            display: flex;
+            align-items: center;
+            margin: 4px 0;
+        }
+
+        .label {
+            display: inline-block;
+            width: 125px;
+        }
+
+        input[type="text"],
+        textarea {
+            border: 1px solid #ccc;
+            font-family: inherit;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"] {
+            width: 135px;
+            height: 21px;
+        }
+
+        textarea {
+            width: 147px;
+            height: 73px;
+        }
+
+        .alamat {
+            align-items: flex-start;
+        }
+
+        .alamat .label {
+            padding-top: 3px;
+        }
+
+        .pilihan {
+            margin-left: 0;
+        }
+
+        .pilihan label {
+            margin-right: 7px;
+            white-space: nowrap;
+        }
+
+        .tombol {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NOMOR 1: TABEL ABSENSI -->
+    <div class="kotak-absensi">
+        <h1>Absensi Mahasiswa Teknik Informatika</h1>
+
+        <table>
+            <tr>
+                <th rowspan="3">NO</th>
+                <th rowspan="3">NPM</th>
+                <th rowspan="3">NAMA</th>
+                <th colspan="7">PERTEMUAN</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+
+            <tr>
+                <td>9-Feb</td>
+                <td>16-Feb</td>
+                <td>23-Feb</td>
+                <td>2-Mar</td>
+                <td>9-Mar</td>
+                <td>16-Mar</td>
+                <td>23-Mar</td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>1111111111</td>
+                <td class="nama">Nyjah Huston</td>
+                <td>v</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>2222222222</td>
+                <td class="nama">Luan Olivera</td>
+                <td>v</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>3333333333</td>
+                <td class="nama">Yuto Horigome</td>
+                <td>v</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!-- NOMOR 2: FORM MAHASISWA -->
+    <h2>Form Mahasiswa</h2>
+
+    <form action="#" method="post">
+
+        <fieldset>
+            <legend>Data Mahasiswa</legend>
+
+            <div class="baris">
+                <label class="label" for="nama">Nama</label>:
+                <input type="text" id="nama" name="nama"
+                       style="margin-left: 8px;">
+            </div>
+
+            <div class="baris">
+                <label class="label" for="npm">NPM</label>:
+                <input type="text" id="npm" name="npm"
+                       style="margin-left: 8px;">
+            </div>
+
+            <div class="baris">
+                <label class="label" for="kelas">Kelas</label>:
+                <select id="kelas" name="kelas"
+                        style="margin-left: 8px;">
+                    <option value="-">-</option>
+                    <option value="IF-A">IF-A</option>
+                    <option value="IF-B">IF-B</option>
+                    <option value="IF-C">IF-C</option>
+                </select>
+            </div>
+
+            <div class="baris">
+                <span class="label">Jenis Kelamin</span>:
+                <span class="pilihan" style="margin-left: 8px;">
+                    <label>
+                        <input type="radio" name="jenis_kelamin"
+                               value="Pria">Pria
+                    </label>
+                    <label>
+                        <input type="radio" name="jenis_kelamin"
+                               value="Wanita">Wanita
+                    </label>
+                </span>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Tempat Tinggal Mahasiswa</legend>
+
+            <div class="baris alamat">
+                <label class="label" for="alamat">Alamat</label>:
+                <textarea id="alamat" name="alamat"
+                          style="margin-left: 8px;"></textarea>
+            </div>
+
+            <div class="baris">
+                <label class="label" for="kecamatan">Kecamatan</label>:
+                <input type="text" id="kecamatan" name="kecamatan"
+                       style="margin-left: 8px;">
+            </div>
+
+            <div class="baris">
+                <label class="label" for="kabupaten">
+                    Kabupaten/Kotamadya
+                </label>:
+                <input type="text" id="kabupaten" name="kabupaten"
+                       style="margin-left: 8px;">
+            </div>
+
+            <div class="baris">
+                <label class="label" for="provinsi">Provinsi</label>:
+                <input type="text" id="provinsi" name="provinsi"
+                       style="margin-left: 8px;">
+            </div>
+
+            <div class="baris">
+                <label class="label" for="kodepos">Kode Pos</label>:
+                <input type="text" id="kodepos" name="kodepos"
+                       style="margin-left: 8px;">
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Lain-lainnya</legend>
+
+            <div class="baris">
+                <span class="label">Bahasa Pemrograman</span>:
+                <div class="pilihan" style="margin-left: 8px;">
+                    <label>
+                        <input type="checkbox" name="bahasa[]"
+                               value="C/C++">C / C++
+                    </label>
+                    <label>
+                        <input type="checkbox" name="bahasa[]"
+                               value="Go Lang">Go Lang
+                    </label>
+                    <label>
+                        <input type="checkbox" name="bahasa[]"
+                               value="Python">Python
+                    </label>
+                    <label>
+                        <input type="checkbox" name="bahasa[]"
+                               value="Lainnya">Lainnya
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" name="bahasa[]"
+                               value="PHP">PHP
+                    </label>
+                    <label>
+                        <input type="checkbox" name="bahasa[]"
+                               value="Javascript">Javascript
+                    </label>
+                    <label>
+                        <input type="checkbox" name="bahasa[]"
+                               value="Ruby">Ruby
+                    </label>
+                </div>
+            </div>
+
+            <div class="baris" style="align-items: flex-start;">
+                <span class="label">Kegiatan</span>:
+                <div class="pilihan" style="margin-left: 8px;">
+                    <label>
+                        <input type="checkbox" name="kegiatan[]"
+                               value="Organisasi Kemahasiswaan">
+                        Organisasi Kemahasiswaan
+                    </label>
+                    <label>
+                        <input type="checkbox" name="kegiatan[]"
+                               value="Bidang Olahraga">Bidang Olahraga
+                    </label>
+                    <label>
+                        <input type="checkbox" name="kegiatan[]"
+                               value="Lainnya">Lainnya
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" name="kegiatan[]"
+                               value="Organisasi di Luar Kampus">
+                        Organisasi di Luar Kampus
+                    </label>
+                    <label>
+                        <input type="checkbox" name="kegiatan[]"
+                               value="Bidang Seni">Bidang Seni
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="tombol">
+            <input type="reset" value="Reset">
+            <input type="submit" value="Submit">
+        </div>
+
+    </form>
+
+</body>
+</html>
